@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fr3-coverage"
+version = "0.1.0"
+description = "6G FR3 (7-24 GHz) link budget and coverage using 3GPP TR 38.901"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Sunny Arelli"}]
+keywords = ["6G", "3GPP", "Release 20", "wireless", "5G-Advanced"]
+dependencies = ["numpy>=1.22"]
+
+[project.urls]
+Homepage = "https://github.com/sunnyarelli/fr3-coverage"
+Issues = "https://github.com/sunnyarelli/fr3-coverage/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+fr3-coverage = "fr3.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
